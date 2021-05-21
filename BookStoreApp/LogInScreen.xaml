@@ -13,7 +13,7 @@
         Background="{DynamicResource MaterialDesignPaper}"
         FontFamily="{DynamicResource MaterialDesignFont}"
         mc:Ignorable="d"
-        Title="Log-in window" Height="450" Width="429">
+        Title="Login window" Height="450" Width="429">
     <Grid HorizontalAlignment="Left" Margin="0,0,-6.333,-0.333" Width="429">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="429*"/>
@@ -22,42 +22,21 @@
         </Grid.ColumnDefinitions>
 
         <!-- Logo & Title -->
-        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="103" VerticalAlignment="Top" Width="429" Background="Black" Grid.ColumnSpan="3"/>
-        <Label Content="Big-Book Shop" HorizontalAlignment="Left" Margin="138,22,0,0" VerticalAlignment="Top" Width="269" FontSize="48" FontWeight="Bold" FontStretch="ExtraExpanded" Height="62" BorderBrush="White" FontFamily="French Script MT">
-            <Label.Foreground>
-                <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
-                    <GradientStop Color="Black"/>
-                    <GradientStop Color="White" Offset="1"/>
-                    <GradientStop Color="#FF151515"/>
-                    <GradientStop Color="#FF373737"/>
-                    <GradientStop Color="#FF4D4D4D"/>
-                    <GradientStop Color="#FF797979"/>
-                </LinearGradientBrush>
-            </Label.Foreground>
-        </Label>
-        <Image HorizontalAlignment="Left" Height="62" Margin="19,26,0,0" Source="logo.png" VerticalAlignment="Top" Width="100"/>
+        <Image HorizontalAlignment="Left" Height="66" Margin="143,28,0,0" Source="logo.png" VerticalAlignment="Top" Width="111" OpacityMask="Black"/>
 
         <!-- User Name -->
-        <TextBlock HorizontalAlignment="Left" Margin="38,168,0,0" TextWrapping="Wrap" Text="ชื่อผู้ใช้" VerticalAlignment="Top" Height="21" Width="342" FontWeight="Bold" FontSize="20"/>
-        <TextBox x:Name="txtUserName" HorizontalAlignment="Left" Height="31" Margin="38,193,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="342" FontSize="20" RenderTransformOrigin="0.5,0.5">
-            <TextBox.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="0.916"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </TextBox.RenderTransform>
-        </TextBox>
+        <TextBlock HorizontalAlignment="Left" Margin="38,162,0,0" TextWrapping="Wrap" Text="username" VerticalAlignment="Top" Height="21" Width="342" FontSize="20" FontFamily="Berlin Sans FB" FontWeight="Bold" Foreground="Black"/>
+        <TextBox x:Name="txtUserName" HorizontalAlignment="Left" Height="33" Margin="43,188,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="337" FontSize="20" RenderTransformOrigin="0.5,0.5"/>
 
         <!-- Password -->
-        <TextBlock HorizontalAlignment="Left" Margin="38,242,0,0" TextWrapping="Wrap" Text="รหัสผ่าน" VerticalAlignment="Top" Height="21" Width="342" FontWeight="Bold" FontSize="20"/>
-        <PasswordBox x:Name="txtPassword" HorizontalAlignment="Left" Margin="38,268,0,0" VerticalAlignment="Top" MaxLength="4" Width="342" Height="30" FontSize="20"/>
+        <TextBlock HorizontalAlignment="Left" Margin="38,236,0,0" TextWrapping="Wrap" Text="password" VerticalAlignment="Top" Height="21" Width="342" FontSize="20" FontFamily="Berlin Sans FB" FontWeight="Bold" Foreground="Black"/>
+        <PasswordBox x:Name="txtPassword" HorizontalAlignment="Left" Margin="38,262,0,0" VerticalAlignment="Top" MaxLength="4" Width="342" Height="30" FontSize="20" RenderTransformOrigin="0.5,0.5"/>
 
         <!-- Button -->
-        <Button x:Name="BtnLogIn" Content="ลงชื่อเข้าใช้" HorizontalAlignment="Left" Margin="73,352,0,0" VerticalAlignment="Top" Width="119" Height="35" Background="#FF060607" Click="BtnSignIn_Click" FontSize="20"/>
-        <Button x:Name="BtnAdd" Content="ลงทะเบียน" HorizontalAlignment="Left" Margin="225,352,0,0" VerticalAlignment="Top" Width="113" Height="35" Background="#FF060607" Click="BtnAdd_Click" FontSize="20"/>
-        <TextBlock HorizontalAlignment="Left" Margin="38,116,0,0" TextWrapping="Wrap" Text="โปรดกรอกข้อมูลเพื่อเข้าสู่ระบบ" VerticalAlignment="Top" Height="21" Width="342" FontWeight="Bold" FontSize="20" TextAlignment="Center" Foreground="#DDFF0000"/>
+        <Button x:Name="BtnLogIn" Content="Sign In" HorizontalAlignment="Left" Margin="73,336,0,0" VerticalAlignment="Top" Width="119" Height="35" Background="#FF060607" Click="BtnSignIn_Click" FontSize="20" FontFamily="Berlin Sans FB"/>
+        <Button x:Name="BtnAdd" Content="Register" HorizontalAlignment="Left" Margin="225,336,0,0" VerticalAlignment="Top" Width="113" Height="35" Background="#FF060607" Click="BtnAdd_Click" FontSize="20" FontFamily="Berlin Sans FB"/>
+        <TextBlock HorizontalAlignment="Left" Margin="38,110,0,0" TextWrapping="Wrap" Text="LOG IN" VerticalAlignment="Top" Height="21" Width="342" FontWeight="Bold" FontSize="22" TextAlignment="Center" Foreground="Red" FontFamily="Berlin Sans FB"/>
+        <Label Content="                                                                  Application by BigBookShop (2021)" HorizontalAlignment="Left" Margin="0,391,0,0" Width="429" FontFamily="Berlin Sans FB Demi" BorderBrush="White" Background="Black" Foreground="#DDFFFFFF" Grid.ColumnSpan="3"/>
     </Grid>
 </Window>
 

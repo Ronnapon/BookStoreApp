@@ -20,7 +20,7 @@ namespace BookStoreApp
                 SqliteCommand CreateCommand = new SqliteCommand();
                 CreateCommand.Connection = db;
                 CreateCommand.CommandText = "CREATE TABLE IF NOT EXISTS User (" +
-                    "Uid INTEGER AUTO INCREMENT, " +
+                    "Uid INTEGER NOT NULL, " +
                     "UserName NVARCHAR(20) NOT NULL, " +
                     "Password CHAR(4) NOT NULL, " +
                     "PRIMARY KEY(Uid)" +
@@ -85,12 +85,14 @@ namespace BookStoreApp
                     db.Open();
                     SqliteCommand insertcommand = new SqliteCommand();
                     insertcommand.Connection = db;
-                    insertcommand.CommandText = "INSERT INTO User " +
-                        "VALUES (NULL,@UserName,@Password);";
+                    insertcommand.CommandText = "INSERT INTO User (UserName,Password) VALUES (@UserName,@Password)";
                     insertcommand.Parameters.AddWithValue("@UserName", txtUserName.Text);
                     insertcommand.Parameters.AddWithValue("@Password", txtPassword.Password);
                     insertcommand.ExecuteReader();
                     db.Close();
+                    MessageBox.Show("ลงทะเบียนเรียบร้อย");
+                    txtUserName.Clear();
+                    txtPassword.Clear();
                 }
             }
         }
