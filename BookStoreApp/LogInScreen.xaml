@@ -22,20 +22,23 @@
         </Grid.ColumnDefinitions>
 
         <!-- Logo & Title -->
-        <Image HorizontalAlignment="Left" Height="66" Margin="143,28,0,0" Source="logo.png" VerticalAlignment="Top" Width="111" OpacityMask="Black"/>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Right" Height="86" VerticalAlignment="Top" Width="429" Background="Black" Grid.ColumnSpan="3" Margin="0,0,0.333,0"/>
+        <Image HorizontalAlignment="Left" Height="66" Margin="151,8,0,0" Source="logo.png" VerticalAlignment="Top" Width="111" OpacityMask="Black"/>
 
         <!-- User Name -->
-        <TextBlock HorizontalAlignment="Left" Margin="38,162,0,0" TextWrapping="Wrap" Text="username" VerticalAlignment="Top" Height="21" Width="342" FontSize="20" FontFamily="Berlin Sans FB" FontWeight="Bold" Foreground="Black"/>
-        <TextBox x:Name="txtUserName" HorizontalAlignment="Left" Height="33" Margin="43,188,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="337" FontSize="20" RenderTransformOrigin="0.5,0.5"/>
+        <Image HorizontalAlignment="Left" Height="31" Margin="20,180,0,0" Source="icon_username.png" VerticalAlignment="Top" Width="32" OpacityMask="Black"/>
+        <TextBlock HorizontalAlignment="Left" Margin="60,152,0,0" TextWrapping="Wrap" Text="username" VerticalAlignment="Top" Height="21" Width="342" FontSize="20" FontFamily="Berlin Sans FB" Foreground="Black"/>
+        <TextBox x:Name="txtUserName" HorizontalAlignment="Left" Height="33" Margin="60,173,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="342" FontSize="20" RenderTransformOrigin="0.5,0.5" FontFamily="Berlin Sans FB"/>
 
         <!-- Password -->
-        <TextBlock HorizontalAlignment="Left" Margin="38,236,0,0" TextWrapping="Wrap" Text="password" VerticalAlignment="Top" Height="21" Width="342" FontSize="20" FontFamily="Berlin Sans FB" FontWeight="Bold" Foreground="Black"/>
-        <PasswordBox x:Name="txtPassword" HorizontalAlignment="Left" Margin="38,262,0,0" VerticalAlignment="Top" MaxLength="4" Width="342" Height="30" FontSize="20" RenderTransformOrigin="0.5,0.5"/>
+        <Image HorizontalAlignment="Left" Height="31" Margin="20,249,0,0" Source="icon_password.png" VerticalAlignment="Top" Width="32" OpacityMask="Black"/>
+        <TextBlock HorizontalAlignment="Left" Margin="60,226,0,0" TextWrapping="Wrap" Text="password" VerticalAlignment="Top" Height="21" Width="342" FontSize="20" FontFamily="Berlin Sans FB" Foreground="Black"/>
+        <PasswordBox x:Name="txtPassword" HorizontalAlignment="Left" Margin="60,248,0,0" VerticalAlignment="Top" MaxLength="4" Width="342" Height="30" FontSize="20" RenderTransformOrigin="0.5,0.5" FontFamily="Berlin Sans FB"/>
 
         <!-- Button -->
-        <Button x:Name="BtnLogIn" Content="Sign In" HorizontalAlignment="Left" Margin="73,336,0,0" VerticalAlignment="Top" Width="119" Height="35" Background="#FF060607" Click="BtnSignIn_Click" FontSize="20" FontFamily="Berlin Sans FB"/>
-        <Button x:Name="BtnAdd" Content="Register" HorizontalAlignment="Left" Margin="225,336,0,0" VerticalAlignment="Top" Width="113" Height="35" Background="#FF060607" Click="BtnAdd_Click" FontSize="20" FontFamily="Berlin Sans FB"/>
-        <TextBlock HorizontalAlignment="Left" Margin="38,110,0,0" TextWrapping="Wrap" Text="LOG IN" VerticalAlignment="Top" Height="21" Width="342" FontWeight="Bold" FontSize="22" TextAlignment="Center" Foreground="Red" FontFamily="Berlin Sans FB"/>
+        <Button x:Name="BtnLogIn" Content="sign in" HorizontalAlignment="Left" Margin="77,326,0,0" VerticalAlignment="Top" Width="119" Height="35" Background="#FF060607" Click="BtnSignIn_Click" FontSize="20" FontFamily="Berlin Sans FB" FontWeight="Normal" BorderBrush="{x:Null}"/>
+        <Button x:Name="BtnRegister" Content="register" HorizontalAlignment="Left" Margin="229,326,0,0" VerticalAlignment="Top" Width="113" Height="35" Background="#FF060607" Click="BtnRegister_Click" FontSize="20" FontFamily="Berlin Sans FB" FontWeight="Normal" BorderBrush="{x:Null}"/>
+        <TextBlock HorizontalAlignment="Left" Margin="38,110,0,0" TextWrapping="Wrap" Text="LOG IN" VerticalAlignment="Top" Height="21" Width="342" FontWeight="Bold" FontSize="22" TextAlignment="Center" Foreground="Black" FontFamily="Berlin Sans FB"/>
         <Label Content="                                                                  Application by BigBookShop (2021)" HorizontalAlignment="Left" Margin="0,391,0,0" Width="429" FontFamily="Berlin Sans FB Demi" BorderBrush="White" Background="Black" Foreground="#DDFFFFFF" Grid.ColumnSpan="3"/>
     </Grid>
 </Window>

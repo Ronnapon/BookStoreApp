@@ -92,6 +92,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="CustomerScreen.xaml.cs">
+      <DependentUpon>CustomerScreen.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="User.cs" />
+    <Page Include="CustomerScreen.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="LogInScreen.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -144,6 +152,33 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="icon_username.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="icon_password.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="iconv_buying.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="icon_customer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="icon_book.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="icon_buying.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="icon_book.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="icon_search.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="icon_search.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\MaterialDesignThemes.4.0.0\build\MaterialDesignThemes.targets" Condition="Exists('..\packages\MaterialDesignThemes.4.0.0\build\MaterialDesignThemes.targets')" />

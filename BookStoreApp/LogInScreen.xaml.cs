@@ -10,91 +10,68 @@ namespace BookStoreApp
     /// </summary>
     public partial class LogInScreen : Window
     {
+        public static string UserName ;
+
         public LogInScreen()
         {
             InitializeComponent();
-            // Create Database
-            using (SqliteConnection db = new SqliteConnection("Filename=BookStoreApp.db"))
-            {
-                db.Open();
-                SqliteCommand CreateCommand = new SqliteCommand();
-                CreateCommand.Connection = db;
-                CreateCommand.CommandText = "CREATE TABLE IF NOT EXISTS User (" +
-                    "Uid INTEGER NOT NULL, " +
-                    "UserName NVARCHAR(20) NOT NULL, " +
-                    "Password CHAR(4) NOT NULL, " +
-                    "PRIMARY KEY(Uid)" +
-                    ")";
-                CreateCommand.ExecuteReader();
-                db.Close();
-            }
+            User.InitializeDatabase();
         }
 
         private void BtnSignIn_Click(object sender, RoutedEventArgs e)
         {
             if (String.IsNullOrEmpty(txtUserName.Text) || String.IsNullOrEmpty(txtPassword.Password))
             {
-                MessageBox.Show("โปรดกรอก ชื่อผู้ใช้ และ รหัสผ่าน ให้ครบถ้วน");
+                MessageBox.Show("Please input username and password!!!");
             }
             else
             {
-                // Select Database
-                ArrayList entries = new ArrayList();
-                using (SqliteConnection db = new SqliteConnection("Filename=BookStoreApp.db"))
+                User user = new User();
+                user.Username = txtUserName.Text;
+                user.Password = txtPassword.Password;
+                if (user.verify("signin") == true)
                 {
-                    db.Open();
-                    SqliteCommand selectCommand = new SqliteCommand();
-                    selectCommand.Connection = db;
-                    selectCommand.CommandText = "SELECT * FROM User " +
-                        "WHERE UserName=@UserName AND Password=@Password";
-                    selectCommand.Parameters.AddWithValue("@UserName", txtUserName.Text);
-                    selectCommand.Parameters.AddWithValue("@Password", txtPassword.Password);
-                    SqliteDataReader query = selectCommand.ExecuteReader();                   
-                    while (query.Read())
-                    {
-                        entries.Add(query.GetString(1));
-                    }
-                    if (entries.Count > 0)
-                    {
-                        MainWindow mainWindow = new MainWindow();
-                        mainWindow.Show();
-                        this.Hide();
-                    }
-                    else
-                    {
-                        MessageBox.Show("ชื่อผู้ใช้ และ รหัสผ่าน ไม่ถูกต้อง");
-                        txtUserName.Clear();
-                        txtPassword.Clear();
-                    }
-                    db.Close();
+                    UserName = txtUserName.Text;
+                    MainWindow mainWindow = new MainWindow();
+                    mainWindow.Show();
+                    this.Hide();
+                }
+                else
+                {
+                    MessageBox.Show("username and password is incorrect!!!");
+                    ClearData();
                 }
             }
         }
 
-        private void BtnAdd_Click(object sender, RoutedEventArgs e)
+        private void BtnRegister_Click(object sender, RoutedEventArgs e)
         {
             if (String.IsNullOrEmpty(txtUserName.Text) || String.IsNullOrEmpty(txtPassword.Password))
             {
-                MessageBox.Show("โปรดกรอก ชื่อผู้ใช้ และ รหัสผ่าน ให้ครบถ้วน");
+                MessageBox.Show("Please input username and password!!!");
             }
             else
             {
-                // Insert Database
-                using (SqliteConnection db = new SqliteConnection("Filename=BookStoreApp.db"))
+                User user = new User();
+                user.Username = txtUserName.Text;
+                user.Password = txtPassword.Password;
+                if (user.verify("register") == true)
                 {
-                    db.Open();
-                    SqliteCommand insertcommand = new SqliteCommand();
-                    insertcommand.Connection = db;
-                    insertcommand.CommandText = "INSERT INTO User (UserName,Password) VALUES (@UserName,@Password)";
-                    insertcommand.Parameters.AddWithValue("@UserName", txtUserName.Text);
-                    insertcommand.Parameters.AddWithValue("@Password", txtPassword.Password);
-                    insertcommand.ExecuteReader();
-                    db.Close();
-                    MessageBox.Show("ลงทะเบียนเรียบร้อย");
-                    txtUserName.Clear();
-                    txtPassword.Clear();
+                    MessageBox.Show("User is already register!!!");
                 }
+                else
+                {
+                    user.register();
+                    MessageBox.Show("Register is complete!!!"); 
+                }
+                ClearData();
             }
+        }
+
+        private void ClearData()
+        {
+            txtUserName.Clear();
+            txtPassword.Clear();
         }
     }
 }

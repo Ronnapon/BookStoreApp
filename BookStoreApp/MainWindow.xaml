@@ -13,7 +13,7 @@
         Background="{DynamicResource MaterialDesignPaper}"
         FontFamily="{DynamicResource MaterialDesignFont}"
         mc:Ignorable="d"
-        Title="Log-in window" Height="450" Width="429">
+        Title="Manage window" Height="450" Width="429">
     <Grid HorizontalAlignment="Left" Margin="0,0,-6.333,-0.333" Width="429">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="429*"/>
@@ -23,24 +23,26 @@
 
         <!-- Logo & Title -->
         <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="41" VerticalAlignment="Top" Width="429" Background="Black" Grid.ColumnSpan="3"/>
-        <Label Content="Big-Book Shop" HorizontalAlignment="Left" Margin="154,3,0,0" VerticalAlignment="Top" Width="139" FontSize="24" FontWeight="Bold" FontStretch="ExtraExpanded" Height="36" BorderBrush="White" FontFamily="French Script MT">
-            <Label.Foreground>
-                <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
-                    <GradientStop Color="Black"/>
-                    <GradientStop Color="White" Offset="1"/>
-                    <GradientStop Color="#FF151515"/>
-                    <GradientStop Color="#FF373737"/>
-                    <GradientStop Color="#FF4D4D4D"/>
-                    <GradientStop Color="#FF797979"/>
-                </LinearGradientBrush>
-            </Label.Foreground>
-        </Label>
+        <Label Content="Big-Book Shop" HorizontalAlignment="Left" Margin="154,3,0,0" VerticalAlignment="Top" Width="139" FontSize="24" FontWeight="Bold" FontStretch="ExtraExpanded" Height="36" BorderBrush="White" FontFamily="French Script MT" Background="{x:Null}" Foreground="White"/>
         <Image HorizontalAlignment="Left" Height="31" Margin="10,5,0,0" Source="logo.png" VerticalAlignment="Top" Width="50"/>
+        
+        <!-- User Loging -->
+        <Label x:Name="LblUserName" Content="" HorizontalAlignment="Left" Margin="8,46,0,0" VerticalAlignment="Top" Width="409" FontFamily="Berlin Sans FB" FontWeight="Bold"/>
+        <Button x:Name="btnSignOut" Content="Sign Out" HorizontalAlignment="Left" Margin="319,48,0,0" VerticalAlignment="Top" Width="92" Height="22" Background="Black" FontFamily="Berlin Sans FB" FontSize="14" Click="btnSignOut_Click"/>
 
-        <!-- User Name -->
-
-        <!-- Password -->
-
-        <!-- Button -->
+        <!-- Customer Manage -->
+        <Image HorizontalAlignment="Left" Height="87" Margin="39,92,0,0" VerticalAlignment="Top" Width="93" Source="icon_customer.png" OpacityMask="Black"/>
+        <Button x:Name="btnCustomer" Content="Custoer Manage" HorizontalAlignment="Left" Margin="154,110,0,0" VerticalAlignment="Top" Width="229" Height="48" Background="Black" FontFamily="Berlin Sans FB" FontSize="20" Click="btnCustomer_Click"/>
+        
+        <!-- Book Manage -->
+        <Image HorizontalAlignment="Left" Height="66" Margin="49,181,0,0" VerticalAlignment="Top" Width="66" Source="icon_book.png" OpacityMask="Black" RenderTransformOrigin="-1.126,-0.229"/>
+        <Button x:Name="btnBook" Content="Book Manage" HorizontalAlignment="Left" Margin="154,191,0,0" VerticalAlignment="Top" Width="229" Height="48" Background="Black" FontFamily="Berlin Sans FB" FontSize="20"/>
+        
+        <!-- Order -->
+        <Image HorizontalAlignment="Left" Height="71" Margin="41,266,0,0" VerticalAlignment="Top" Width="81" Source="icon_buying.png" OpacityMask="Black"/>
+        <Button x:Name="btnOrder" Content="Order" HorizontalAlignment="Left" Margin="154,274,0,0" VerticalAlignment="Top" Width="229" Height="48" Background="Black" FontFamily="Berlin Sans FB" FontSize="20"/>
+        
+        <!-- Footter -->
+        <Label Content="                                                                  Application by BigBookShop (2021)" HorizontalAlignment="Left" Margin="0,391,0,0.333" Width="429" FontFamily="Berlin Sans FB Demi" BorderBrush="White" Background="Black" Foreground="#DDFFFFFF" Grid.ColumnSpan="3"/>
     </Grid>
 </Window>
