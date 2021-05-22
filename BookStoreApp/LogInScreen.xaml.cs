@@ -15,7 +15,7 @@ namespace BookStoreApp
         public LogInScreen()
         {
             InitializeComponent();
-            User.InitializeDatabase();
+            User.CreateTable();
         }
 
         private void BtnSignIn_Click(object sender, RoutedEventArgs e)

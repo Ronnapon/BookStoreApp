@@ -6,20 +6,20 @@ namespace BookStoreApp
 {
     class User
     {
-        string username;
-        string password;
+        private string username;
+        private string password;
 
         public string Username { get => username; set => username = value; }
         public string Password { get => password; set => password = value; }
 
-        public static void InitializeDatabase()
+        public static void CreateTable()
         {
             using (SqliteConnection db = new SqliteConnection("Filename=BookStoreApp.db"))
             {
                 db.Open();
                 SqliteCommand CreateCommand = new SqliteCommand();
                 CreateCommand.Connection = db;
-                CreateCommand.CommandText = "CREATE TABLE IF NOT EXISTS User (" +
+                CreateCommand.CommandText = "CREATE TABLE IF NOT EXISTS Users (" +
                     "Uid INTEGER NOT NULL, " +
                     "UserName NVARCHAR(20) NOT NULL, " +
                     "Password CHAR(4) NOT NULL, " +
@@ -38,7 +38,7 @@ namespace BookStoreApp
                 db.Open();
                 SqliteCommand insertcommand = new SqliteCommand();
                 insertcommand.Connection = db;
-                insertcommand.CommandText = "INSERT INTO User (UserName,Password) VALUES (@UserName,@Password)";
+                insertcommand.CommandText = "INSERT INTO Users (UserName,Password) VALUES (@UserName,@Password)";
                 insertcommand.Parameters.AddWithValue("@UserName", username.ToUpper());
                 insertcommand.Parameters.AddWithValue("@Password", password.ToUpper());
                 insertcommand.ExecuteReader();
@@ -58,14 +58,14 @@ namespace BookStoreApp
                 if (logIn_Action == "register")
                 {
                     // check for register
-                    selectCommand.CommandText = "SELECT * FROM User " +
+                    selectCommand.CommandText = "SELECT * FROM Users " +
                         "WHERE UserName=@UserName ";
                     selectCommand.Parameters.AddWithValue("@UserName", username.ToUpper());
                 }
                 else
                 {
                     // check for signin
-                    selectCommand.CommandText = "SELECT * FROM User " +
+                    selectCommand.CommandText = "SELECT * FROM Users " +
                        "WHERE UserName=@UserName AND Password = @Password";
                     selectCommand.Parameters.AddWithValue("@UserName", username.ToUpper());
                     selectCommand.Parameters.AddWithValue("@Password", password.ToUpper());

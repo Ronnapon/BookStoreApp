@@ -13,7 +13,7 @@
         Background="{DynamicResource MaterialDesignPaper}"
         FontFamily="{DynamicResource MaterialDesignFont}"
         mc:Ignorable="d"
-        Title="Manage window" Height="450" Width="429">
+        Title="Custoer Manage Screen" Height="450" Width="429">
     <Grid HorizontalAlignment="Left" Margin="0,0,-6.333,-0.333" Width="429">
         <Grid.RowDefinitions>
             <RowDefinition/>
@@ -30,7 +30,7 @@
         <Image HorizontalAlignment="Left" Height="31" Margin="10,5,0,0" Source="logo.png" VerticalAlignment="Top" Width="50"/>
 
         <!-- User Loging -->
-        <Button x:Name="btnMainMenu" Content="Main Menu" HorizontalAlignment="Left" Margin="319,48,0,0" VerticalAlignment="Top" Width="92" Height="22" Background="Black" FontFamily="Berlin Sans FB" FontSize="14" Click="btnMainMenu_Click"/>
+        <Button x:Name="btnMainMenu" Content="Main Menu" HorizontalAlignment="Left" Margin="307,48,0,0" VerticalAlignment="Top" Width="103" Height="22" Background="Black" FontFamily="Berlin Sans FB" FontSize="14" Click="btnMainMenu_Click"/>
 
         <!-- Customer Manage -->
         <Image HorizontalAlignment="Left" Height="91" Margin="161,49,0,0" VerticalAlignment="Top" Width="93" Source="icon_customer.png" OpacityMask="Black"/>
@@ -44,17 +44,22 @@
         <TextBlock HorizontalAlignment="Left" Margin="43,230,0,0" TextWrapping="Wrap" Text="Email" VerticalAlignment="Top" Height="21" Width="138" FontSize="12" FontFamily="Berlin Sans FB" Foreground="Black" FontWeight="Bold"/>
         <TextBlock HorizontalAlignment="Left" Margin="10,68,0,0" TextWrapping="Wrap" Text="ID" VerticalAlignment="Top" Height="21" Width="31" FontSize="12" FontFamily="Berlin Sans FB" Foreground="Black" FontWeight="Bold"/>
         <TextBlock HorizontalAlignment="Left" Margin="45,132,0,0" TextWrapping="Wrap" Text="Name" VerticalAlignment="Top" Height="21" Width="136" FontSize="12" FontFamily="Berlin Sans FB" Foreground="Black" FontWeight="Bold"/>
-        <TextBox x:Name="txtCustomer_id" HorizontalAlignment="Left" Height="21" Margin="27,68,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="74" FontSize="12" RenderTransformOrigin="0.5,0.5" FontFamily="Berlin Sans FB"/>
-        <TextBox x:Name="txtCustomer_Name" HorizontalAlignment="Left" Height="24" Margin="43,145,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="328" FontSize="12" RenderTransformOrigin="0.5,0.5" FontFamily="Berlin Sans FB"/>
-        <TextBox x:Name="txtCustomer_Email" HorizontalAlignment="Left" Height="24" Margin="43,243,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="328" FontSize="12" RenderTransformOrigin="0.5,0.5" FontFamily="Berlin Sans FB"/>
         <TextBlock HorizontalAlignment="Left" Margin="43,278,0,0" TextWrapping="Wrap" Text="Home Address" VerticalAlignment="Top" Height="21" Width="138" FontSize="12" FontFamily="Berlin Sans FB" Foreground="Black" FontWeight="Bold"/>
-        <TextBox x:Name="txtCustomer_Address" HorizontalAlignment="Left" Height="24" Margin="43,291,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="328" FontSize="12" RenderTransformOrigin="0.5,0.5" FontFamily="Berlin Sans FB"/>
-        <Button x:Name="btnSubmit" Content="Add" HorizontalAlignment="Left" Margin="41,343,0,0" VerticalAlignment="Top" Width="75" Height="31" Background="Black" FontFamily="Berlin Sans FB" FontSize="14" Click="btnSubmit_Click"/>
+        <TextBox x:Name="txtCusId" HorizontalAlignment="Left" Height="21" Margin="27,68,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="74" FontSize="12" RenderTransformOrigin="0.5,0.5" FontFamily="Berlin Sans FB" TextAlignment="Center"/>
+        <TextBox x:Name="txtCustName" HorizontalAlignment="Left" Height="24" Margin="43,145,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="328" FontSize="12" RenderTransformOrigin="0.5,0.5" FontFamily="Berlin Sans FB"/>
+        <TextBox x:Name="txtCusIdCardNo" HorizontalAlignment="Left" Height="24" Margin="43,193,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="328" FontSize="12" RenderTransformOrigin="0.5,0.5" FontFamily="Berlin Sans FB"/>
+        <TextBox x:Name="txtCusEmail" HorizontalAlignment="Left" Height="24" Margin="43,243,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="328" FontSize="12" RenderTransformOrigin="0.5,0.5" FontFamily="Berlin Sans FB"/>
+        <TextBox x:Name="txtCusAddress" HorizontalAlignment="Left" Height="24" Margin="43,291,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="328" FontSize="12" RenderTransformOrigin="0.5,0.5" FontFamily="Berlin Sans FB"/>
+        <Button x:Name="btnAdd" Content="Add" HorizontalAlignment="Left" Margin="41,343,0,0" VerticalAlignment="Top" Width="75" Height="31" Background="Black" FontFamily="Berlin Sans FB" FontSize="14" Click="btnAdd_Click"/>
         <Button x:Name="btnClear" Content="Clear" HorizontalAlignment="Left" Margin="307,343,0,0" VerticalAlignment="Top" Width="75" Height="31" Background="Black" FontFamily="Berlin Sans FB" FontSize="14" Click="btnClear_Click"/>
-        <Image HorizontalAlignment="Left" Height="21" Margin="104,66,0,0" VerticalAlignment="Top" Width="25" Source="icon_search.png" OpacityMask="Black" RenderTransformOrigin="1.799,0.921"/>
-        <Button x:Name="btnSubmit_Copy" Content="Edit" HorizontalAlignment="Left" Margin="128,343,0,0" VerticalAlignment="Top" Width="75" Height="31" Background="Black" FontFamily="Berlin Sans FB" FontSize="14" Click="btnSubmit_Click"/>
-        <Button x:Name="btnSubmit_Copy1" Content="Delete" HorizontalAlignment="Left" Margin="216,343,0,0" VerticalAlignment="Top" Width="75" Height="31" Background="Black" FontFamily="Berlin Sans FB" FontSize="14" Click="btnSubmit_Click"/>
+        <Button x:Name="btnEdit" Content="Edit" HorizontalAlignment="Left" Margin="128,343,0,0" VerticalAlignment="Top" Width="75" Height="31" Background="Black" FontFamily="Berlin Sans FB" FontSize="14" Click="btnEdit_Click"/>
+        <Button x:Name="btnDelete" Content="Delete" HorizontalAlignment="Left" Margin="216,343,0,0" VerticalAlignment="Top" Width="75" Height="31" Background="Black" FontFamily="Berlin Sans FB" FontSize="14" Click="btnDelete_Click"/>
         <TextBlock HorizontalAlignment="Left" Margin="45,180,0,0" TextWrapping="Wrap" Text="ID Card No." VerticalAlignment="Top" Height="21" Width="136" FontSize="12" FontFamily="Berlin Sans FB" Foreground="Black" FontWeight="Bold"/>
-        <TextBox x:Name="txtCustomer_Name_Copy" HorizontalAlignment="Left" Height="24" Margin="43,193,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="328" FontSize="12" RenderTransformOrigin="0.5,0.5" FontFamily="Berlin Sans FB"/>
+        
+        <Button x:Name="btnSearch" Content="Add" HorizontalAlignment="Left" Margin="106,68,0,0" VerticalAlignment="Top" Width="20" Height="16" FontFamily="Berlin Sans FB" FontSize="14" Click="btnSearch_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="icon_search.png" Stretch="Uniform"/>
+            </Button.Background>
+        </Button>
     </Grid>
 </Window>
