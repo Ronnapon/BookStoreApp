@@ -22,7 +22,15 @@ namespace BookStoreApp
                 return;
             }
 
+
             Customer customer = new Customer();
+            // Check Format ID Card Number
+            if (customer.IsValidCheckPersonID(txtCusIdCardNo.Text) == false)
+            {
+                MessageBox.Show("ID Card Number Format is incorrect!!!");
+                return;
+            }
+
 
             // Check ID Card No Dupplicate
             customer.GetData("CusIdCardNo", txtCusIdCardNo.Text);
@@ -60,6 +68,13 @@ namespace BookStoreApp
 
             Customer customer = new Customer();
 
+            // Check Format ID Card Number
+            if (customer.IsValidCheckPersonID(txtCusIdCardNo.Text) == false)
+            {
+                MessageBox.Show("ID Card Number Format is incorrect!!!");
+                return;
+            }
+
             // Check ID Card No Dupplicate
             customer.GetData("CusIdCardNo", txtCusIdCardNo.Text);
             
@@ -92,6 +107,7 @@ namespace BookStoreApp
                 MessageBox.Show("Please input Customer ID for Delete!!!");
                 return;
             }
+
             Customer customer = new Customer();
             customer.GetData("CusId", txtCusId.Text);
             if (customer.CusId != "")

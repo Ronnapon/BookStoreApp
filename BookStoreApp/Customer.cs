@@ -116,5 +116,55 @@ namespace BookStoreApp
                 db.Close();
             }
         }
+
+        public bool IsValidCheckPersonID(string cusIdCardNo)
+        {
+            if (cusIdCardNo.Length != 13)
+            {
+                return false;
+            }
+            char[] numberChars = cusIdCardNo.ToCharArray();
+
+            int total = 0;
+            int mul = 13;
+            int mod = 0, mod2 = 0;
+            int nsub = 0;
+            int numberChars12 = 0;
+
+            for (int i = 0; i < numberChars.Length - 1; i++)
+            {
+                int num = 0;
+                int.TryParse(numberChars[i].ToString(), out num);
+
+                total = total + num * mul;
+                mul = mul - 1;
+            }
+
+            mod = total % 11;
+            nsub = 11 - mod;
+            mod2 = nsub % 10;
+
+            int.TryParse(numberChars[12].ToString(), out numberChars12);
+
+            //Debug.Log(numberChars12);
+
+            if (mod2 != numberChars12)
+                return false;
+            else
+                return true;
+        }
+
+        public bool IsValidEmail(string cusEmail)
+        {
+            try
+            {
+                var addr = new System.Net.Mail.MailAddress(cusEmail);
+                return addr.Address == cusEmail;
+            }
+            catch
+            {
+                return false;
+            }
+        }
     }
 }
