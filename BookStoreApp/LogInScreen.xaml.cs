@@ -10,12 +10,12 @@ namespace BookStoreApp
     /// </summary>
     public partial class LogInScreen : Window
     {
-        public static string UserName ;
+        public static string userName ;
 
         public LogInScreen()
         {
             InitializeComponent();
-            User.CreateTable();
+            LogIn.CreateTable();
         }
 
         private void BtnSignIn_Click(object sender, RoutedEventArgs e)
@@ -23,24 +23,22 @@ namespace BookStoreApp
             if (String.IsNullOrEmpty(txtUserName.Text) || String.IsNullOrEmpty(txtPassword.Password))
             {
                 MessageBox.Show("Please input username and password!!!");
+                return;
+            }
+            LogIn login = new LogIn();
+            login.Username = txtUserName.Text;
+            login.Password = txtPassword.Password;
+            if (login.verify("signin") == true)
+            {
+                userName = txtUserName.Text;
+                MainWindow mainWindow = new MainWindow();
+                mainWindow.Show();
+                this.Hide();
             }
             else
             {
-                User user = new User();
-                user.Username = txtUserName.Text;
-                user.Password = txtPassword.Password;
-                if (user.verify("signin") == true)
-                {
-                    UserName = txtUserName.Text;
-                    MainWindow mainWindow = new MainWindow();
-                    mainWindow.Show();
-                    this.Hide();
-                }
-                else
-                {
-                    MessageBox.Show("username and password is incorrect!!!");
-                    ClearData();
-                }
+                MessageBox.Show("username and password is incorrect!!!");
+                ClearData();
             }
         }
 
@@ -49,23 +47,21 @@ namespace BookStoreApp
             if (String.IsNullOrEmpty(txtUserName.Text) || String.IsNullOrEmpty(txtPassword.Password))
             {
                 MessageBox.Show("Please input username and password!!!");
+                return;
+            }
+            LogIn login = new LogIn();
+            login.Username = txtUserName.Text;
+            login.Password = txtPassword.Password;
+            if (login.verify("register") == true)
+            {
+                MessageBox.Show("User is already register!!!");
             }
             else
             {
-                User user = new User();
-                user.Username = txtUserName.Text;
-                user.Password = txtPassword.Password;
-                if (user.verify("register") == true)
-                {
-                    MessageBox.Show("User is already register!!!");
-                }
-                else
-                {
-                    user.register();
-                    MessageBox.Show("Register is complete!!!"); 
-                }
-                ClearData();
+                login.register();
+                MessageBox.Show("Register is complete!!!");
             }
+            ClearData();
         }
 
         private void ClearData()

@@ -23,7 +23,7 @@
 
         <!-- Logo & Title -->
         <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Right" Height="86" VerticalAlignment="Top" Width="429" Background="Black" Grid.ColumnSpan="3" Margin="0,0,0.333,0"/>
-        <Image HorizontalAlignment="Left" Height="66" Margin="151,8,0,0" Source="logo.png" VerticalAlignment="Top" Width="111" OpacityMask="Black"/>
+        <Image HorizontalAlignment="Left" Height="66" Margin="151,8,0,0" Source="icon_logo.png" VerticalAlignment="Top" Width="111" OpacityMask="Black"/>
 
         <!-- User Name -->
         <Image HorizontalAlignment="Left" Height="31" Margin="20,180,0,0" Source="icon_username.png" VerticalAlignment="Top" Width="32" OpacityMask="Black"/>
@@ -39,7 +39,7 @@
         <Button x:Name="BtnLogIn" Content="sign in" HorizontalAlignment="Left" Margin="77,326,0,0" VerticalAlignment="Top" Width="119" Height="35" Background="#FF060607" Click="BtnSignIn_Click" FontSize="20" FontFamily="Berlin Sans FB" FontWeight="Normal" BorderBrush="{x:Null}"/>
         <Button x:Name="BtnRegister" Content="register" HorizontalAlignment="Left" Margin="229,326,0,0" VerticalAlignment="Top" Width="113" Height="35" Background="#FF060607" Click="BtnRegister_Click" FontSize="20" FontFamily="Berlin Sans FB" FontWeight="Normal" BorderBrush="{x:Null}"/>
         <TextBlock HorizontalAlignment="Left" Margin="38,110,0,0" TextWrapping="Wrap" Text="LOG IN" VerticalAlignment="Top" Height="21" Width="342" FontWeight="Bold" FontSize="22" TextAlignment="Center" Foreground="Black" FontFamily="Berlin Sans FB"/>
-        <Label Content="                                                                  Application by BigBookShop (2021)" HorizontalAlignment="Left" Margin="0,391,0,0" Width="429" FontFamily="Berlin Sans FB Demi" BorderBrush="White" Background="Black" Foreground="#DDFFFFFF" Grid.ColumnSpan="3"/>
+        <Label Content="Application by BigBookShop (2021)" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="0,391,0,0" Width="429" FontFamily="Berlin Sans FB Demi" BorderBrush="White" Background="Black" Foreground="#DDFFFFFF" Grid.ColumnSpan="3"/>
     </Grid>
 </Window>
 

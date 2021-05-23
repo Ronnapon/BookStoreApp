@@ -4,7 +4,7 @@ using Microsoft.Data.Sqlite;
 
 namespace BookStoreApp
 {
-    class User
+    class LogIn
     {
         private string username;
         private string password;

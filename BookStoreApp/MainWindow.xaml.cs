@@ -23,22 +23,27 @@ namespace BookStoreApp
         public MainWindow()
         {
             InitializeComponent();
-            LblUserName.Content = "Welcome : User " + LogInScreen.UserName;
+            LblUserName.Content = "Welcome : User " + LogInScreen.userName;
         }
 
-        private void btnSignOut_Click(object sender, RoutedEventArgs e)
+        private void BtnSignOut_Click(object sender, RoutedEventArgs e)
         {
-            LogInScreen.UserName = "";
+            LogInScreen.userName = "";
             LogInScreen logInScreen = new LogInScreen();
             logInScreen.Show();
             this.Hide();
         }
 
-        private void btnCustomer_Click(object sender, RoutedEventArgs e)
+        private void BtnCustomer_Click(object sender, RoutedEventArgs e)
         {
             CustomerScreen customerScreen = new CustomerScreen();
             customerScreen.Show();
             this.Hide();
+        }
+
+        private void BtnBook_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

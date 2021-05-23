@@ -16,7 +16,7 @@ namespace BookStoreApp
 
         private void btnAdd_Click(object sender, RoutedEventArgs e)
         {
-            if (String.IsNullOrEmpty(txtCustName.Text) || String.IsNullOrEmpty(txtCusIdCardNo.Text))
+            if (String.IsNullOrEmpty(txtCusName.Text) || String.IsNullOrEmpty(txtCusIdCardNo.Text))
             {
                 MessageBox.Show("Please input Name or ID Card Number");
                 return;
@@ -34,7 +34,7 @@ namespace BookStoreApp
 
             // Insert Data
             customer.CusId = "";
-            customer.CusName = txtCustName.Text;
+            customer.CusName = txtCusName.Text;
             customer.CusIdCardNo = txtCusIdCardNo.Text;
             customer.CusEmail = txtCusEmail.Text;
             customer.CusAddress = txtCusAddress.Text;
@@ -52,7 +52,7 @@ namespace BookStoreApp
                 MessageBox.Show("Please input Customer ID for Edit!!!");
                 return;
             }
-            if (String.IsNullOrEmpty(txtCustName.Text) || String.IsNullOrEmpty(txtCusIdCardNo.Text))
+            if (String.IsNullOrEmpty(txtCusName.Text) || String.IsNullOrEmpty(txtCusIdCardNo.Text))
             {
                 MessageBox.Show("Please input Name or ID Card Number");
                 return;
@@ -72,7 +72,7 @@ namespace BookStoreApp
             customer.GetData("CusId",txtCusId.Text);
             if (customer.CusId != "")
             {
-                customer.CusName = txtCustName.Text;
+                customer.CusName = txtCusName.Text;
                 customer.CusIdCardNo = txtCusIdCardNo.Text;
                 customer.CusEmail = txtCusEmail.Text;
                 customer.CusAddress = txtCusAddress.Text;
@@ -120,7 +120,7 @@ namespace BookStoreApp
             customer.GetData("CusId", txtCusId.Text);
             if (customer.CusId != "")
             {
-                txtCustName.Text = customer.CusName;
+                txtCusName.Text = customer.CusName;
                 txtCusIdCardNo.Text = customer.CusIdCardNo;
                 txtCusEmail.Text = customer.CusEmail;
                 txtCusAddress.Text = customer.CusAddress;
@@ -147,7 +147,7 @@ namespace BookStoreApp
         private void ClearData()
         {
             txtCusId.Clear();
-            txtCustName.Clear();
+            txtCusName.Clear();
             txtCusIdCardNo.Clear();
             txtCusEmail.Clear();
             txtCusAddress.Clear();
