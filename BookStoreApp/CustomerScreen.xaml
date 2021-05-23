@@ -13,7 +13,7 @@
         Background="{DynamicResource MaterialDesignPaper}"
         FontFamily="{DynamicResource MaterialDesignFont}"
         mc:Ignorable="d"
-        Title="Custoer Manage Screen" Height="450" Width="429">
+        Title="Custoer Management Screen" Height="450" Width="429">
     <Grid HorizontalAlignment="Left" Margin="0,0,-6.333,-0.333" Width="429">
         <Grid.RowDefinitions>
             <RowDefinition/>
@@ -36,25 +36,25 @@
         </Button>
 
         <!-- Customer_Id -->
-        <TextBlock x:Name="lblCusId" HorizontalAlignment="Left" Margin="10,68,0,0" TextWrapping="Wrap" Text="ID" VerticalAlignment="Top" Height="21" Width="31" FontSize="12" FontFamily="Berlin Sans FB" Foreground="Black" FontWeight="Bold"/>
+        <TextBlock x:Name="lblCusId" HorizontalAlignment="Left" Margin="10,68,0,0" TextWrapping="Wrap" Text="ID" VerticalAlignment="Top" Height="21" Width="31" FontSize="12" FontFamily="Berlin Sans FB" Foreground="Black"/>
         <TextBox x:Name="txtCusId" HorizontalAlignment="Left" Height="21" Margin="27,68,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="74" FontSize="12" RenderTransformOrigin="0.5,0.5" FontFamily="Berlin Sans FB" TextAlignment="Center"/>
         <Image HorizontalAlignment="Left" Height="91" Margin="161,49,0,0" VerticalAlignment="Top" Width="93" Source="icon_customer.png" OpacityMask="Black"/>
 
 
         <!-- Customer Name -->
-        <TextBlock x:Name="lblName" HorizontalAlignment="Left" Margin="45,132,0,0" TextWrapping="Wrap" Text="Name" VerticalAlignment="Top" Height="21" Width="136" FontSize="12" FontFamily="Berlin Sans FB" Foreground="Black" FontWeight="Bold"/>
+        <TextBlock x:Name="lblName" HorizontalAlignment="Left" Margin="45,132,0,0" TextWrapping="Wrap" Text="Name" VerticalAlignment="Top" Height="21" Width="136" FontSize="12" FontFamily="Berlin Sans FB" Foreground="Black"/>
         <TextBox x:Name="txtCusName" HorizontalAlignment="Left" Height="24" Margin="43,145,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="328" FontSize="12" RenderTransformOrigin="0.5,0.5" FontFamily="Berlin Sans FB"/>
-        
-        <!-- Customer ID Card -->
-        <TextBlock x:Name="lblIdCardNo" HorizontalAlignment="Left" Margin="45,180,0,0" TextWrapping="Wrap" Text="ID Card No" VerticalAlignment="Top" Height="21" Width="136" FontSize="12" FontFamily="Berlin Sans FB" Foreground="Black" FontWeight="Bold"/>
-        <TextBox x:Name="txtCusIdCardNo" HorizontalAlignment="Left" Height="24" Margin="43,193,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="328" FontSize="12" RenderTransformOrigin="0.5,0.5" FontFamily="Berlin Sans FB"/>
 
-        <!-- Customer Email -->      
-        <TextBlock x:Name="lblEmail" HorizontalAlignment="Left" Margin="43,230,0,0" TextWrapping="Wrap" Text="Email" VerticalAlignment="Top" Height="21" Width="138" FontSize="12" FontFamily="Berlin Sans FB" Foreground="Black" FontWeight="Bold"/>
+        <!-- Customer ID Card -->
+        <TextBlock x:Name="lblIdCardNo" HorizontalAlignment="Left" Margin="45,180,0,0" TextWrapping="Wrap" Text="ID Card No" VerticalAlignment="Top" Height="21" Width="136" FontSize="12" FontFamily="Berlin Sans FB" Foreground="Black"/>
+        <TextBox x:Name="txtCusIdCardNo" HorizontalAlignment="Left" Height="24" Margin="43,193,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="328" FontSize="12" RenderTransformOrigin="0.5,0.5" FontFamily="Berlin Sans FB" PreviewTextInput="TextBoxIdCardNo_OnPreviewTextInput"/>
+
+        <!-- Customer Email -->
+        <TextBlock x:Name="lblEmail" HorizontalAlignment="Left" Margin="43,230,0,0" TextWrapping="Wrap" Text="Email" VerticalAlignment="Top" Height="21" Width="138" FontSize="12" FontFamily="Berlin Sans FB" Foreground="Black"/>
         <TextBox x:Name="txtCusEmail" HorizontalAlignment="Left" Height="24" Margin="43,243,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="328" FontSize="12" RenderTransformOrigin="0.5,0.5" FontFamily="Berlin Sans FB"/>
 
         <!-- Customer Address -->
-        <TextBlock x:Name="lblAddress" HorizontalAlignment="Left" Margin="43,278,0,0" TextWrapping="Wrap" Text="Home Address" VerticalAlignment="Top" Height="21" Width="138" FontSize="12" FontFamily="Berlin Sans FB" Foreground="Black" FontWeight="Bold"/>
+        <TextBlock x:Name="lblAddress" HorizontalAlignment="Left" Margin="43,278,0,0" TextWrapping="Wrap" Text="Home Address" VerticalAlignment="Top" Height="21" Width="138" FontSize="12" FontFamily="Berlin Sans FB" Foreground="Black"/>
         <TextBox x:Name="txtCusAddress" HorizontalAlignment="Left" Height="24" Margin="43,291,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="328" FontSize="12" RenderTransformOrigin="0.5,0.5" FontFamily="Berlin Sans FB"/>
 
         <!-- Footter -->

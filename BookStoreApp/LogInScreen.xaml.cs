@@ -5,9 +5,6 @@ using System.Collections;
 
 namespace BookStoreApp
 {
-    /// <summary>
-    /// Interaction logic for LogInScreen.xaml
-    /// </summary>
     public partial class LogInScreen : Window
     {
         public static string userName ;
@@ -20,48 +17,50 @@ namespace BookStoreApp
 
         private void BtnSignIn_Click(object sender, RoutedEventArgs e)
         {
-            if (String.IsNullOrEmpty(txtUserName.Text) || String.IsNullOrEmpty(txtPassword.Password))
-            {
-                MessageBox.Show("Please input username and password!!!");
-                return;
-            }
             LogIn login = new LogIn();
             login.Username = txtUserName.Text;
             login.Password = txtPassword.Password;
-            if (login.verify("signin") == true)
+            // Validation ------------------------>
+            if (String.IsNullOrEmpty(txtUserName.Text) || String.IsNullOrEmpty(txtPassword.Password))
             {
-                userName = txtUserName.Text;
-                MainWindow mainWindow = new MainWindow();
-                mainWindow.Show();
-                this.Hide();
+                MessageBox.Show("Please input username and password");
+                return;
             }
-            else
+            if (!login.IsVerify("signin"))
             {
-                MessageBox.Show("username and password is incorrect!!!");
+                MessageBox.Show("username and password is incorrect");
                 ClearData();
+                return;
             }
+            //------------------------------------>
+            // Open Main Window
+            userName = txtUserName.Text;
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.Show();
+            this.Hide();
         }
 
         private void BtnRegister_Click(object sender, RoutedEventArgs e)
         {
-            if (String.IsNullOrEmpty(txtUserName.Text) || String.IsNullOrEmpty(txtPassword.Password))
-            {
-                MessageBox.Show("Please input username and password!!!");
-                return;
-            }
             LogIn login = new LogIn();
             login.Username = txtUserName.Text;
             login.Password = txtPassword.Password;
-            if (login.verify("register") == true)
+            // Validation ------------------------>
+            if (String.IsNullOrEmpty(txtUserName.Text) || String.IsNullOrEmpty(txtPassword.Password))
             {
-                MessageBox.Show("User is already register!!!");
+                MessageBox.Show("Please input username and password");
+                return;
             }
-            else
+            if (!login.IsVerify("register"))
             {
-                login.register();
-                MessageBox.Show("Register is complete!!!");
+                MessageBox.Show("Username already have in System");
+                ClearData();
+                return;
             }
-            ClearData();
+            //------------------------------------>
+            // Register User
+            login.Register();
+            MessageBox.Show("Register is complete");
         }
 
         private void ClearData()

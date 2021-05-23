@@ -42,3 +42,5 @@ D:\Users\E14-Ronnapon\Desktop\ProjectASP\11. Project\BookStoreApp\BookStoreApp\B
 D:\Users\E14-Ronnapon\Desktop\ProjectASP\11. Project\BookStoreApp\BookStoreApp\BookStoreApp\obj\Debug\BookStoreApp_Content.g.cs
 D:\Users\E14-Ronnapon\Desktop\ProjectASP\11. Project\BookStoreApp\BookStoreApp\BookStoreApp\obj\Debug\CustomerScreen.g.cs
 D:\Users\E14-Ronnapon\Desktop\ProjectASP\11. Project\BookStoreApp\BookStoreApp\BookStoreApp\obj\Debug\CustomerScreen.baml
+D:\Users\E14-Ronnapon\Desktop\ProjectASP\11. Project\BookStoreApp\BookStoreApp\BookStoreApp\obj\Debug\BookScreen.g.cs
+D:\Users\E14-Ronnapon\Desktop\ProjectASP\11. Project\BookStoreApp\BookStoreApp\BookStoreApp\obj\Debug\BookScreen.baml

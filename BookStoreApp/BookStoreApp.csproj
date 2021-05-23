@@ -92,11 +92,19 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Book.cs" />
+    <Compile Include="BookScreen.xaml.cs">
+      <DependentUpon>BookScreen.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Customer.cs" />
     <Compile Include="CustomerScreen.xaml.cs">
       <DependentUpon>CustomerScreen.xaml</DependentUpon>
     </Compile>
     <Compile Include="LogIn.cs" />
+    <Page Include="BookScreen.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="CustomerScreen.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

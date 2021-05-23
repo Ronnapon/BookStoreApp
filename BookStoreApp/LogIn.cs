@@ -30,7 +30,7 @@ namespace BookStoreApp
             }
         }
 
-        public void register()
+        public void Register()
         {
             // Insert Database
             using (SqliteConnection db = new SqliteConnection("Filename=BookStoreApp.db"))
@@ -46,7 +46,7 @@ namespace BookStoreApp
             }
         }
 
-        public bool verify(string logIn_Action)
+        public bool IsVerify(string logIn_Action)
         {
             bool check = false;
             ArrayList entries = new ArrayList();

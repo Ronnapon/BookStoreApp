@@ -27,7 +27,7 @@
         <Image HorizontalAlignment="Left" Height="31" Margin="10,5,0,0" Source="icon_logo.png" VerticalAlignment="Top" Width="50"/>
         
         <!-- User Loging -->
-        <Label x:Name="LblUserName" Content="" HorizontalAlignment="Left" Margin="8,46,0,0" VerticalAlignment="Top" Width="409" FontFamily="Berlin Sans FB" FontWeight="Bold"/>
+        <Label x:Name="LblUserName" Content="" HorizontalAlignment="Left" Margin="8,46,0,0" VerticalAlignment="Top" Width="409" FontFamily="Berlin Sans FB" Foreground="#DDFF0000"/>
         <Button x:Name="btnSignOut" Content="Sign Out" HorizontalAlignment="Left" Margin="319,48,0,0" VerticalAlignment="Top" Width="92" Height="22" Background="Black" FontFamily="Berlin Sans FB" FontSize="14" Click="BtnSignOut_Click"/>
 
         <!-- Customer Manage -->
@@ -40,7 +40,7 @@
         
         <!-- Order -->
         <Image HorizontalAlignment="Left" Height="71" Margin="41,266,0,0" VerticalAlignment="Top" Width="81" Source="icon_buying.png" OpacityMask="Black"/>
-        <Button x:Name="btnOrder" Content="Order" HorizontalAlignment="Left" Margin="154,274,0,0" VerticalAlignment="Top" Width="229" Height="48" Background="Black" FontFamily="Berlin Sans FB" FontSize="20"/>
+        <Button x:Name="btnOrder" Content="Order" HorizontalAlignment="Left" Margin="154,274,0,0" VerticalAlignment="Top" Width="229" Height="48" Background="Black" FontFamily="Berlin Sans FB" FontSize="20" Click="BtnOrder_Click"/>
         
         <!-- Footter -->
         <Label Content="Application by BigBookShop (2021)" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="0,391,0,0.333" Width="429" FontFamily="Berlin Sans FB Demi" BorderBrush="White" Background="Black" Foreground="#DDFFFFFF" Grid.ColumnSpan="3"/>
